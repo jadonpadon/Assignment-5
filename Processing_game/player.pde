@@ -32,12 +32,12 @@ class Player {
     if (playerSpeed.y > 10) {
       playerSpeed.y = 10;
     }
-    if (playerPos.y > 450) {
-      playerPos.y = 450;
+    if (playerPos.y > platY - 50) {
+      playerPos.y = platY - 50;
     }
-    if (playerPos.y == 450) {
+    if (playerPos.y == platY - 50) {
       grounded = true;
-    } else if (playerPos.y < 450){
+    } else if (playerPos.y < platY - 50){
       grounded = false;
     }
     if (playerSpeed.x < -4) {

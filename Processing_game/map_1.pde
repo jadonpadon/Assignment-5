@@ -1,6 +1,12 @@
 //later on, I will make platforms with customizable size using arrays and arraylists
 //there will also be multiple maps with different themes for the player to play
 
+float platY = 550;
+float platX = 400;
+float platL = 800;
+float platH = 100;
+
+
 class Map {
   Map (){
     
@@ -8,7 +14,7 @@ class Map {
   void display(){
     noStroke();
     fill(150);
-    rectMode(CORNERS);
-    rect(0, 450, width, height);
+    rectMode(CENTER);
+    rect(platX, platY, platL, platH);
   }
 }
