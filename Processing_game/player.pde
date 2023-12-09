@@ -28,7 +28,7 @@ class Player {
   }
 
   void limits() {
-
+    //stop the player from leaving the screen and falling through platforms
     if (playerSpeed.y > 10) {
       playerSpeed.y = 10;
     }
@@ -37,7 +37,7 @@ class Player {
     }
     if (playerPos.y == platY - 50) {
       grounded = true;
-    } else if (playerPos.y < platY - 50){
+    } else if (playerPos.y < platY - 50) {
       grounded = false;
     }
     if (playerSpeed.x < -4) {
@@ -45,15 +45,17 @@ class Player {
     } else if (playerSpeed.x > 4) {
       playerSpeed.x = 4;
     }
-    if (playerPos.x - 10 < 0){
+    if (playerPos.x - 10 < 0) {
       playerPos.x = 10;
     }
-    if (playerPos.x + 10 > width){
+    if (playerPos.x + 10 > width) {
       playerPos.x = width - 10;
     }
   }
 
   void move() {
+
+    //println(playerSpeed.y); used to test
     playerSpeed.add(playerAcceleration);
     playerPos.add(playerSpeed);
     //move the player when A or D or W is pressed

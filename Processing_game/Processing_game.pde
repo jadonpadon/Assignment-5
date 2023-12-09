@@ -1,5 +1,9 @@
 Player player = new Player();
 Map map = new Map();
+Menus menus = new Menus();
+
+//variable to change gamestate
+int gamestate = 0; //0 =start menu, 1 = game, 2 = end screen
 
 void setup() {
   size (800, 600);
@@ -7,11 +11,35 @@ void setup() {
 
 void draw() {
   background (0);
-  map.display();
-  player.display();
-  player.move();
-  player.limits();
-  println(playerSpeed.y);
+
+  //switch statement to switch display between gamestates
+  switch (gamestate) {
+
+  case 0:  //menu
+    menus.drawMenu();
+    menus.checkHover();
+    break;
+
+  case 1:  //game
+    map.startingPlat();
+    player.display();
+    player.move();
+    player.limits();
+    break;
+
+  case 2: // end screen
+    //end screen not made yet
+    break;
+  default:
+    break;
+  }
+}
+
+void mousePressed() {
+
+  if (hoverPlay == true) {
+    gamestate = 1;
+  }
 }
 
 void keyPressed() {

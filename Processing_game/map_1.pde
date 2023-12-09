@@ -8,10 +8,9 @@ float platH = 100;
 
 
 class Map {
-  Map (){
-    
+  Map () {
   }
-  void display(){
+  void startingPlat() {
     noStroke();
     fill(150);
     rectMode(CENTER);
