@@ -51,6 +51,14 @@ class Player {
     if (playerPos.x + 10 > width) {
       playerPos.x = width - 10;
     }
+
+    //limits for floating platforms
+    if ((playerPos.y == y - h/2) && playerPos.x > x - w/2 && playerPos.x < x + w/2) {
+      grounded = true;
+      playerPos.y = y - h/2;
+    } else if (playerPos.y < y - h/2 && playerPos.x < x - w/2 && playerPos.x > x + w/2) {
+      grounded = false;
+    }
   }
 
   void move() {

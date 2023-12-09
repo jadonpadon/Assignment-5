@@ -1,5 +1,5 @@
 Player player = new Player();
-Map map = new Map();
+Platform platform = new Platform();
 Menus menus = new Menus();
 
 //variable to change gamestate
@@ -21,7 +21,7 @@ void draw() {
     break;
 
   case 1:  //game
-    map.startingPlat();
+    platform.startingPlat();
     player.display();
     player.move();
     player.limits();
