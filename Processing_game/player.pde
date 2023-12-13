@@ -13,6 +13,8 @@ boolean reachFinish = false;
 
 boolean reset = false;
 
+int trailLength = 10;
+PVector[] trail = new PVector[trailLength];
 
 class Player {
 
@@ -26,6 +28,10 @@ class Player {
 
   void display() {
     //draw the player
+    
+    updateTrail(playerPos.copy());
+    
+    drawTrail();
 
     rectMode(CORNERS);
     fill (255);
@@ -138,6 +144,28 @@ class Player {
       }
     } else if (grounded == false) {
       playerSpeed.add(playerGravity);
+    }
+  }
+
+  void updateTrail(PVector newPos) {
+    // Shift elements in the array to make space for the new position
+    for (int i = trailLength - 1; i > 0; i--) {
+      trail[i] = trail[i - 1];
+    }
+
+    // Add the new position to the beginning of the array
+    trail[0] = newPos;
+  }
+
+  void drawTrail() {
+    // Draw shapes at the positions stored in the trail array
+    noStroke();
+    rectMode(CORNERS);
+    fill(random(255), random(255), random(255));  // Adjust the fill color and transparency
+    for (int i = 0; i < trailLength; i++) {
+      if (trail[i] != null) {
+        rect(trail[i].x - 10, trail[i].y - 30, trail[i].x + 10, trail[i].y);  // Adjust the size of the trail shapes
+      }
     }
   }
 }
