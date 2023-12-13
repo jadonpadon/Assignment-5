@@ -32,6 +32,16 @@ class Map {
     fill(0, 255, 0);
     ellipseMode(CENTER);
     circle(finish.x, finish.y, finishW);
+    
+    for (int spikeX = 0; spikeX < width; spikeX += 50){
+      spike(spikeX, 600);
+    }
 
+  }
+  
+  void spike(float spikeX, float spikeY){
+    fill(255, 0, 0);
+    triangle(spikeX, spikeY, spikeX + 50, spikeY, spikeX + 25, spikeY - 50);
+    
   }
 }

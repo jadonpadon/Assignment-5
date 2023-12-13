@@ -9,7 +9,6 @@ int gamestate = 0; //0 =start menu, 1 = game, 2 = end screen
 void setup() {
 
   size (800, 600);
-  
 }
 
 void draw() {
@@ -24,16 +23,20 @@ void draw() {
     break;
 
   case 1:  //game
-    platform.startingPlat();
+    //platform.startingPlat();
     map.map();
     player.display();
     player.move();
     player.limits();
-
+    player.reset();
+    if (reachFinish == true) {
+      gamestate = 2;
+    }
     break;
 
   case 2: // end screen
-    //end screen not made yet
+    menus.drawEnd();
+    menus.checkHover();
     break;
   default:
     break;
@@ -44,6 +47,10 @@ void mousePressed() {
 
   if (hoverPlay == true) {
     gamestate = 1;
+  }
+
+  if (hoverMain == true) {
+    gamestate = 0;
   }
 }
 

@@ -11,7 +11,7 @@ boolean grounded = false;
 
 boolean reachFinish = false;
 
-
+boolean reset = false;
 
 
 class Player {
@@ -51,15 +51,10 @@ class Player {
     if (playerSpeed.y > 10) {
       playerSpeed.y = 10;
     }
-    if (playerPos.y > platY - 50) {
-      playerPos.y = platY - 50;
-    }
 
 
     //player lands on platform
-    if ((playerPos.y == platY - 50) ||
-
-      (playerPos.y > 430 && playerPos.y < 450 && playerPos.x + 10 > 40 && playerPos.x - 10 < 160) ||
+    if ((playerPos.y > 430 && playerPos.y < 450 && playerPos.x + 10 > 40 && playerPos.x - 10 < 160) ||
 
       (playerPos.y > 410 && playerPos.y < 430 && playerPos.x + 10 > 220 && playerPos.x - 10 < 340) ||
 
@@ -111,6 +106,13 @@ class Player {
     }
     if (playerPos.x + 10 > width) {
       playerPos.x = width - 10;
+    }
+  }
+
+  void reset() {
+    if (playerPos.y > 550 || reachFinish == true) {
+      playerPos.x = 100;
+      playerPos.y = 420;
     }
   }
 
