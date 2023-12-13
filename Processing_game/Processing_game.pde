@@ -7,7 +7,9 @@ Map map = new Map();
 int gamestate = 0; //0 =start menu, 1 = game, 2 = end screen
 
 void setup() {
+
   size (800, 600);
+  
 }
 
 void draw() {
@@ -23,10 +25,11 @@ void draw() {
 
   case 1:  //game
     platform.startingPlat();
-    map.map1();
+    map.map();
     player.display();
     player.move();
     player.limits();
+
     break;
 
   case 2: // end screen
