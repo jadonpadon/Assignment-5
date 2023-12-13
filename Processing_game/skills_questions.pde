@@ -1,0 +1,36 @@
+/*
+
+19. Difference between a for loop and a while loop:
+For Loop: Typically used when the number of iterations is known beforehand. It consists of an initialization, a condition, and an increment/decrement statement.
+While Loop: Used when the number of iterations is not known beforehand. It continues looping as long as a specified condition is true.
+
+22. Difference between parameters and arguments:
+Parameters: Variables in a function definition. They act as placeholders for the actual values (arguments) that will be passed into the function.
+Arguments: Actual values passed into a function when it is called. They correspond to the parameters of the function.
+
+25. Difference between a class and an object:
+Class: A blueprint or template for creating objects. It defines the properties and behaviors common to all objects of that type.
+Object: An instance of a class. It is a concrete entity created from the class and has its own unique state and behavior.
+
+26. What is a constructor function? What does it do and when?
+Constructor Function: A special method in a class that is automatically called when an object of the class is created. It initializes the object's properties and performs setup tasks.
+When: Constructors are used to ensure that objects start with a valid state and are commonly used to set initial values for object properties.
+
+27. Why should each class have its own tab in Processing?
+Reason: In Processing, each class should have its own tab to ensure proper organization and separation of code. It helps in maintaining a clear structure, making the code more readable and manageable.
+
+31. Difference between an array and an ArrayList:
+Array: A fixed-size data structure that stores elements of the same type. The size is defined at the time of creation.
+ArrayList: A dynamic data structure that can grow or shrink in size. It is part of Java's collection framework and provides more flexibility than arrays.
+
+32. Why would you want to go through a list backward, decrementing the index?
+Reason: Going through a list backward can be useful when modifying the list during iteration to avoid issues with changing indices. Decrementing the index prevents skipping elements or accessing out-of-bounds indices.
+
+37. When should you use PVector instead of float variables?
+Use of PVector: PVector is used when dealing with 2D or 3D vector operations, such as representing and manipulating position, velocity, or acceleration. It simplifies vector math and provides convenient methods.
+
+42. What is a normalized vector, why is it useful?
+Normalized Vector: A vector with a magnitude of 1, indicating only the direction. It is obtained by dividing each component of the vector by its magnitude.
+Usefulness: Normalized vectors are useful for representing direction without the influence of magnitude. They simplify calculations involving vectors and are often used in algorithms like physics simulations and graphics.
+
+*/

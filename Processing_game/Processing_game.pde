@@ -1,5 +1,4 @@
 Player player = new Player();
-Platform platform = new Platform();
 Menus menus = new Menus();
 Map map = new Map();
 

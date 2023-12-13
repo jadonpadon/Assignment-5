@@ -14,17 +14,41 @@ class Menus {
     playY = 450;
     mainX = 400;
     mainY = 400;
-    
   }
 
   void drawMenu() {
 
+    int rows = 8; 
+    int cols = 8; 
+
+    int rectSize = width / cols; 
+
+    // Nested loops to draw the checkered pattern
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
+
+        int x = j * rectSize;
+        int y = i * rectSize;
+
+        // Use if statement to alternate colors
+        if ((i + j) % 2 == 0) {
+          fill(50); // Light color
+        } else {
+          fill(25); // Dark color
+        }
+
+        // Draw the rectangle
+        rectMode(CORNER);
+        rect(x, y, rectSize, rectSize);
+      }
+    }
+
     //println (hoverPlay);
 
-    fill (0);
-    noStroke();
-    rectMode(CORNERS);
-    rect(0, 0, width, height);
+    /* fill (0);
+     noStroke();
+     rectMode(CORNERS);
+     rect(0, 0, width, height); */
 
     //draw title
     textAlign(CENTER, CENTER);
@@ -43,10 +67,33 @@ class Menus {
     fill(0);
     text("PLAY", playX, playY);
   }
-  
+
   void drawEnd() {
 
-    //println (hoverPlay);
+    int rows = 8; 
+    int cols = 8; 
+
+    int rectSize = width / cols; 
+
+    // Nested loops to draw the checkered pattern
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
+
+        int x = j * rectSize;
+        int y = i * rectSize;
+
+        // Use if statement to alternate colors
+        if ((i + j) % 2 == 0) {
+          fill(50); // Light color
+        } else {
+          fill(25); // Dark color
+        }
+
+        // Draw the rectangle
+        rectMode(CORNER);
+        rect(x, y, rectSize, rectSize);
+      }
+    }
 
     fill (0);
     noStroke();
@@ -78,7 +125,7 @@ class Menus {
     } else {
       hoverPlay = false;
     }
-    
+
     if ((mouseX > mainX - 100) && (mouseX < mainX + 100) && mouseY >mainY - 35 && mouseY < mainY + 35) {
 
       hoverMain = true;
