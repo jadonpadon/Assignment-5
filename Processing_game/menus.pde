@@ -14,7 +14,7 @@ class Menus {
 
   void drawMenu() {
 
-    println (hoverPlay);
+    //println (hoverPlay);
 
     fill (0);
     noStroke();

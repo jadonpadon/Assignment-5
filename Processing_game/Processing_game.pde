@@ -1,6 +1,7 @@
 Player player = new Player();
 Platform platform = new Platform();
 Menus menus = new Menus();
+Map map = new Map();
 
 //variable to change gamestate
 int gamestate = 0; //0 =start menu, 1 = game, 2 = end screen
@@ -22,6 +23,7 @@ void draw() {
 
   case 1:  //game
     platform.startingPlat();
+    map.map1();
     player.display();
     player.move();
     player.limits();
@@ -52,7 +54,7 @@ void keyPressed() {
     right = true;
     left = false;
     jump = false;
-  } else if (key == 'w' || key == 'W') {
+  } else if (key == 'w' || key == 'W' || key == ' ') {
     jump = true;
   }
 }
@@ -66,7 +68,7 @@ void keyReleased() {
     right = false;
     left = false;
   }
-  if (key == 'w' || key == 'W') {
+  if (key == 'w' || key == 'W' || key == ' ') {
     jump = false;
   }
 }

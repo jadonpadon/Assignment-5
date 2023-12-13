@@ -29,15 +29,18 @@ class Player {
 
   void limits() {
     //stop the player from leaving the screen and falling through platforms
+
+    println(grounded);
+
     if (playerSpeed.y > 10) {
       playerSpeed.y = 10;
     }
     if (playerPos.y > platY - 50) {
       playerPos.y = platY - 50;
     }
-    if (playerPos.y == platY - 50) {
+    if ((playerPos.y == platY - 50) || ((playerPos.y >= y - h/2) && playerPos.x > x - w/2 && playerPos.x < x + w/2)) {
       grounded = true;
-    } else if (playerPos.y < platY - 50) {
+    } else if ((playerPos.y < platY - 50) || (playerPos.y < y - h/2 && playerPos.x < x - w/2 && playerPos.x > x + w/2)) {
       grounded = false;
     }
     if (playerSpeed.x < -4) {
@@ -54,10 +57,7 @@ class Player {
 
     //limits for floating platforms
     if ((playerPos.y == y - h/2) && playerPos.x > x - w/2 && playerPos.x < x + w/2) {
-      grounded = true;
       playerPos.y = y - h/2;
-    } else if (playerPos.y < y - h/2 && playerPos.x < x - w/2 && playerPos.x > x + w/2) {
-      grounded = false;
     }
   }
 
@@ -81,7 +81,7 @@ class Player {
       if (playerSpeed.y < -50) {
         playerSpeed.y = -50;
       }
-    } else {
+    } else if (grounded == false) {
       playerSpeed.add(playerGravity);
     }
   }
